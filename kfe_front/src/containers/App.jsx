@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-// import Dashboard from '../pages/Dashboard';
-// import Login from '../pages/Login';
-import ShopCoffe from '../pages/ShopCoffe';
 import ProtectedRoute from './ProtectedRoute';
 import { useState } from 'react';
+// import Login from '../pages/Login';
+import ShopCoffe from '../pages/ShopCoffe/ShopCoffe'
+import Admin from '../pages/Admin/Admin';
 
 const App = () => {
     // const [isLoged, setIsLoged] = useState(() => {
@@ -13,7 +13,7 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<ShopCoffe />} />
-                {/* <Route path="/" element={<Login />} /> */}
+                <Route path="/admin" element={<Admin />} />
                 {/* Ruta protegida */}
                 {/* <Route element={<ProtectedRoute/>}>
                     <Route path="/dashboard" element={<Dashboard />} />

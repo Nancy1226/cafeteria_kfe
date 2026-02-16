@@ -61,17 +61,21 @@
 }
 
 .topbar__user {
-  display: flex;
-  align-items: center;
-  gap: 9px;
   background: #f2f2f2;
   border: 1px solid #e7e7e7;
   padding: 8px 12px;
   border-radius: 999px;
-  font-size: 14px;
-  color: #2b2b2b;
+ }
+
+.topbar__user span{
+  padding-left: 3px;
 }
 
 .topbar__icon {
   font-size: 14px;
+}
+
+.hover-accent:hover {
+  color: #E2732C;
+  cursor: pointer;
 }

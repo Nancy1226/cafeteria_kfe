@@ -1,4 +1,5 @@
 .container__body{
     display: flex;
     flex-direction: row;
+    background: #FAF8F6;
 }
