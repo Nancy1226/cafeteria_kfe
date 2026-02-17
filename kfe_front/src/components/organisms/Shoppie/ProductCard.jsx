@@ -1,4 +1,4 @@
-import Card from "../molecules/Card";
+import Card from "../../molecules/Card";
 
 function ProductCard({
   src,

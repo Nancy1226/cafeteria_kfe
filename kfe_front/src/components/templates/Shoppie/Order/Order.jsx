@@ -1,12 +1,8 @@
-import {
-  ShoppingBag,
-  Trash2,
-  ShoppingCart as ShoppingCartIcon,
-} from "lucide-react";
+import { ShoppingBag, Trash2, ShoppingBag as ShoppingBagIcon} from "lucide-react";
 import Swal from "sweetalert2";
 import "./order.css";
-import ShoppingCart from "../../organisms/ShoppingCart";
-import Subtotal from "../../organisms/Subtotal";
+import ShoppingCart from "../../../organisms/Shoppie/ShoppingCart";
+import Subtotal from "../../../organisms/Shoppie/Subtotal";
 
 function Order({
   cart,
@@ -54,12 +50,13 @@ function Order({
           <div className={`container__lettler ${cart.length === 0 ? "empty" : ""}`}>
             {cart.length === 0 ? (
               <p style={{ padding: 12, color: "#666"}}>
-                <ShoppingCartIcon
+                <ShoppingBagIcon
                   size={16}
-                  color="#E2732C"
-                  style={{ marginRight: 6 }}
+                  color="#857870"
+                  style={{ marginRight: 6 
+                  }}
                 />
-                No hay productos seleccionados
+                Selecciona productos del menu para agregar a la orden
               </p>
             ) : (
               cart.map((item) => (

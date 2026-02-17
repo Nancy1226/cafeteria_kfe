@@ -1,0 +1,284 @@
+.container__admin{
+    background: #F7F5F0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+.topbar__admin{
+  margin-bottom: 18px;
+}
+
+.title__admin{
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.subtitle__admin{
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #6e6e6e;
+}
+
+.table__search__products{
+    display: flex;
+    flex-direction: column;    
+    position: relative;
+    z-index: 20;
+}
+
+.filter__options {
+  margin: 16px 0;
+}
+
+.content__filter__btn {
+  display: flex;
+  gap: 6px;
+  background: #e9e4db;
+  padding: 6px;
+  border-radius: 16px;
+  width: fit-content;
+}
+
+.btn__filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #6e6a63;
+  transition: all 0.2s ease;
+}
+
+.btn__filter.active {
+  background: #ffffff;
+  color: #2f2f2f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.btn__filter:hover {
+  background: #ffffff;
+}
+
+.content__search{
+    display: flex;
+    gap: 26px;
+}
+
+.search__group{
+    display: flex;
+    gap: 12px;
+}
+
+.input__search{
+    border: 1px solid #e7dfd2;
+    width: 380px;
+    background: transparent;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 13px;
+    color: #898684;
+}
+
+.input__search:focus{
+    border: 1px solid #886246;
+}
+
+.btn__new{
+    background: #E47C3C;
+    color: white;
+    border: none;
+    padding: 8px 17px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn__new span{ 
+    font-weight: 700;
+    padding-right: 2px;
+}
+
+.btn__new:hover{
+    background: #F97B27;
+}
+
+
+/* ----------------------------------- TABLA --------------------------------------- */
+
+.container__table__products{
+  background: #f7f3ea;
+  border: 1px solid #ece6dc;
+  border-radius: 8px;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+/* Encabezado */
+.table__products{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table__products thead{
+  background: #F1ECE2;
+}
+
+.table__products th{
+  text-align: left;
+  font-size: 13px;
+  color: #7a736b;
+  font-weight: 600;
+  padding: 12px;
+
+}
+
+/* body */
+.table__products td{
+  border-top: 1px solid #eadfce;
+  background: #F7F5F0;
+  font-size: 13px;
+  color: #2b2b2b;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+.table__products td.table__price{
+  color: #E47C3C;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.table__products td.table__food span{
+  border-radius: 19px;
+  background: #E7E2DC;
+  color: black;
+  padding: 8px 10px;
+}
+
+.content__image__table{
+  width: 44px;         
+  height: 44px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image__product__table{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;      
+}
+
+.table__food span{
+  border-radius: 14px;
+  background: #E7E2DC;
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+
+/* ---------- BOTONES ---------- */
+/* .btn__edit,
+.btn__delete{
+  border-radius: 8px;
+  cursor: pointer;
+  color:#7E7369;
+  background: transparent;
+  border: none;
+  padding: 6px;
+  transition: all .2s ease;
+}
+
+.btn__edit:hover{
+  background: #E2732C;
+  color: black;
+}
+
+
+.btn__delete:hover{
+  background: #E2732C;
+  color: red;
+} */
+
+.btn__edit,
+.btn__delete{
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  cursor: pointer;
+  margin-right: 6px;
+  color:#7E7369;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.btn__delete:hover{
+  background: #E2732C;
+  color: #fff;
+}
+
+.section__form{
+  margin-top: 30px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e8ddd8;
+}
+
+/* IMG */
+.table__products th:nth-child(1),
+.table__products td:nth-child(1){
+  width: 60px;
+}
+
+/* CATEGORIA */
+.table__products th:nth-child(3),
+.table__products td:nth-child(3){
+  text-align: center;
+
+}
+
+/* PRECIO */
+.table__products th:nth-child(4),
+.table__products td:nth-child(4){
+  width: 110px;
+}
+
+/* ACCIONES */
+.table__products th:nth-child(5),
+.table__products td:nth-child(5){
+  width: 100px;
+}
+
+.table__products td:nth-child(2){
+  overflow: hidden;
+}
+
+.product__title,
+.product__description{
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table__products th:nth-child(4),
+.table__products td:nth-child(4),
+.table__products th:nth-child(5),
+.table__products td:nth-child(5){
+  text-align: right;
+}

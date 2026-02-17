@@ -1,12 +1,14 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./shopCoffe.css";
-import TopBar from '../../components/organisms/TopBar/TopBar'
-import Menu from '../../components/templates/Menu/Menu'
-import Order from '../../components/templates/Order/Order'
+import TopBar from '../../components/organisms/Shoppie/TopBar/TopBar'
+import Menu from '../../components/templates/Shoppie/Menu/Menu'
+import Order from '../../components/templates/Shoppie/Order/Order'
 
 const IVA_RATE = 0.16;
 
 function ShopCoffe() {
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]); 
 
     const addToCart = (product) => {
@@ -56,7 +58,7 @@ const handleLogout = () => {
 
   return (
     <>
-    <TopBar nameCoffeShop={'Cafeteria KFE'} roleUser={'admin'} handleLogout={handleLogout} />
+    <TopBar nameCoffeShop={'Cafeteria KFE'} roleUser={'Cajero 1'} handleLogout={handleLogout} />
     <div className="container__body">
       <Menu addToCart={addToCart} />
       <Order cart={cart}

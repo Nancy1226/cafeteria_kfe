@@ -1,5 +1,5 @@
 import "./menu.css";
-import ProductCard from "../../organisms/ProductCard";
+import ProductCard from "../../../organisms/Shoppie/ProductCard";
 
 const products = [
 {
