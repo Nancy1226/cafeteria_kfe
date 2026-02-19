@@ -60,9 +60,11 @@ export const getTopProductos = (limit = 3, desde = null, hasta = null) => {
 
 export const getGraficaVentas = () =>
   db.query(
-    `SELECT p.nombre, SUM(dv.subtotal) AS total
-     FROM detalle_venta dv
-     INNER JOIN productos p ON p.id = dv.producto_id
-     GROUP BY p.nombre
-     ORDER BY total DESC`
+      `SELECT 
+    p.nombre,
+    SUM(dv.cantidad) AS total
+  FROM detalle_venta dv
+  JOIN productos p ON p.id = dv.producto_id
+  GROUP BY p.nombre
+  ORDER BY total DESC;`
   );

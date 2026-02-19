@@ -73,7 +73,7 @@ function VentasReporte() {
     const values = graficaData.map((i) => Number(i.total ?? 0));
     return {
       labels,
-      datasets: [{ label: "Ventas por Producto ($)", data: values, backgroundColor: "#8B4513" }],
+      datasets: [{ label: "Ventas por Producto", data: values, backgroundColor: "#8B4513" }],
     };
   }, [graficaData]);
 
