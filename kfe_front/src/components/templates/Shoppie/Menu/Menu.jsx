@@ -1,34 +1,33 @@
+// Menu.jsx
 import "./menu.css";
 import ProductCard from "../../../organisms/Shoppie/ProductCard";
 
-const products = [
-{
-  id: "cafe-esquina",
-  title: "Café de la Esquina",
-  price: 40.0,
-  description: "Café recién preparado con granos de calidad premium.",
-  img: "https://images.pexels.com/photos/18238543/pexels-photo-18238543.jpeg",
-},
-];
-
-function Menu({ addToCart }) {
+function Menu({ products, loading, error, addToCart }) {
+  if (loading) return <p>Cargando productos...</p>;
+  if (error) return <p style={{ color: "crimson" }}>{error}</p>;
 
   return (
-    <>
     <div className="container__menu">
       {products.map((p) => (
         <ProductCard
           key={p.id}
-          src={p.img}
-          titleCard={p.title}
-          priceCard={`$${p.price.toFixed(2)}`}
-          descriptionCard={p.description}
-          nameButton={"Agregar"}
-          onAdd={() => addToCart({ id: p.id, name: p.title, price: p.price })}
+          src={p.imagen_url}
+          titleCard={p.nombre}
+          priceCard={`$${Number(p.precio ?? 0).toFixed(2)}`}
+          descriptionCard={p.descripcion}
+          nameButton="Agregar"
+          stock={p.stock}
+          onAdd={() =>
+            addToCart({
+              id: p.id,
+              name: p.nombre,
+              price: Number(p.precio ?? 0),
+              stock: p.stock,
+            })
+          }
         />
-      ))} 
+      ))}
     </div>
-    </>
   );
 }
 

@@ -27,6 +27,8 @@
   color: #6e6e6e;
 }
 
+/* ----------------------------------- TOOLBAR --------------------------------------- */
+
 .table__search__products{
     display: flex;
     flex-direction: column;    
@@ -92,6 +94,7 @@
 }
 
 .input__search:focus{
+    outline: none;
     border: 1px solid #886246;
 }
 
@@ -126,7 +129,6 @@
   z-index: 1;
 }
 
-/* Encabezado */
 .table__products{
   width: 100%;
   border-collapse: collapse;
@@ -143,10 +145,8 @@
   color: #7a736b;
   font-weight: 600;
   padding: 12px;
-
 }
 
-/* body */
 .table__products td{
   border-top: 1px solid #eadfce;
   background: #F7F5F0;
@@ -156,19 +156,27 @@
   vertical-align: middle;
 }
 
+/* PRECIO */
 .table__products td.table__price{
   color: #E47C3C;
   font-weight: 700;
   font-size: 15px;
 }
 
-.table__products td.table__food span{
-  border-radius: 19px;
+/* CATEGORIA BADGE */
+.table__food span{
+  display: inline-flex;
+  align-items: center;
+  border-radius: 14px;
   background: #E7E2DC;
-  color: black;
-  padding: 8px 10px;
+  padding: 5px 12px;
+  font-size: 12px;
+  line-height: 1;        /* evita altura rara */
+  white-space: nowrap;   /* evita que "Panadería y Snacks" se parta */
 }
 
+
+/* IMAGEN */
 .content__image__table{
   width: 44px;         
   height: 44px;
@@ -183,36 +191,7 @@
   display: block;      
 }
 
-.table__food span{
-  border-radius: 14px;
-  background: #E7E2DC;
-  padding: 5px 12px;
-  font-size: 12px;
-}
-
-
 /* ---------- BOTONES ---------- */
-/* .btn__edit,
-.btn__delete{
-  border-radius: 8px;
-  cursor: pointer;
-  color:#7E7369;
-  background: transparent;
-  border: none;
-  padding: 6px;
-  transition: all .2s ease;
-}
-
-.btn__edit:hover{
-  background: #E2732C;
-  color: black;
-}
-
-
-.btn__delete:hover{
-  background: #E2732C;
-  color: red;
-} */
 
 .btn__edit,
 .btn__delete{
@@ -224,12 +203,20 @@
   color:#7E7369;
   background: transparent;
   border: 1px solid transparent;
+  transition: all .2s ease;
 }
 
-.btn__delete:hover{
+.btn__edit:hover{
   background: #E2732C;
   color: #fff;
 }
+
+.btn__delete:hover{
+  background: #d64545;
+  color: #fff;
+}
+
+/* ---------- FORM ---------- */
 
 .section__form{
   margin-top: 30px;
@@ -239,34 +226,48 @@
   border: 1px solid #e8ddd8;
 }
 
-/* IMG */
+/* ----------------------------------- COLUMNAS --------------------------------------- */
+
+/* IMG (1) */
 .table__products th:nth-child(1),
 .table__products td:nth-child(1){
   width: 60px;
 }
 
-/* CATEGORIA */
-.table__products th:nth-child(3),
-.table__products td:nth-child(3){
-  text-align: center;
-
-}
-
-/* PRECIO */
-.table__products th:nth-child(4),
-.table__products td:nth-child(4){
-  width: 110px;
-}
-
-/* ACCIONES */
-.table__products th:nth-child(5),
-.table__products td:nth-child(5){
-  width: 100px;
-}
-
+/* NOMBRE (2) */
 .table__products td:nth-child(2){
   overflow: hidden;
 }
+
+/* CATEGORIA (3) */
+.table__products th:nth-child(3),
+.table__products td:nth-child(3){
+  text-align: center;
+  width: 140px;
+}
+
+/* PRECIO (4) */
+.table__products th:nth-child(4),
+.table__products td:nth-child(4){
+  width: 110px;
+  text-align: right;
+}
+
+/* CANTIDAD (5) */
+.table__products th:nth-child(5),
+.table__products td:nth-child(5){
+  width: 120px;
+  text-align: center;
+}
+
+/* ACCIONES (6) */
+.table__products th:nth-child(6),
+.table__products td:nth-child(6){
+  width: 120px;
+  text-align: right;
+}
+
+/* ---------- TEXTO ELIPSIS ---------- */
 
 .product__title,
 .product__description{
@@ -276,9 +277,32 @@
   text-overflow: ellipsis;
 }
 
-.table__products th:nth-child(4),
-.table__products td:nth-child(4),
-.table__products th:nth-child(5),
-.table__products td:nth-child(5){
-  text-align: right;
+/* ---------- BADGE STOCK ---------- */
+
+.table__quantity{
+  text-align: center;
+}
+
+.badge__stock{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stock__ok{
+  background: #e6f4ea;
+  color: #1e7e34;
+}
+
+.stock__low{
+  background: #fff3cd;
+  color: #856404;
+}
+
+.stock__empty{
+  background: #fdecea;
+  color: #b02a37;
 }

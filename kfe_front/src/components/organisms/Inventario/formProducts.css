@@ -1,0 +1,106 @@
+.form__container{
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #eee7e2;
+}
+
+.form__grid{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__full{
+  grid-column: 1 / -1;
+}
+
+.input,
+.textarea{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e8ddd8;
+}
+
+.form__actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+.form__title{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.error{
+  font-size: 12px;
+  color: #d64545;
+  margin-top: 4px;
+}
+
+.form__actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* base */
+.btn{
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .06s ease, background .2s ease, border-color .2s ease, color .2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn:active{
+  transform: translateY(1px);
+}
+
+.btn:disabled{
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* primario */
+.btn__primary{
+  background: #E2732C;
+  border-color: #E2732C;
+  color: #fff;
+}
+
+.btn__primary:hover{
+  background: #d9651f;
+  border-color: #d9651f;
+}
+
+/* ghost */
+.btn__ghost{
+  background: transparent;
+  border-color: #e8ddd8;
+  color: #3a3a3a;
+}
+
+.btn__ghost:hover{
+  background: #f7f3ea;
+  border-color: #E2732C;
+  color: #E2732C;
+}
+
+

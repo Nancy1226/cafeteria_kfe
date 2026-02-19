@@ -79,3 +79,44 @@
   color: #E2732C;
   cursor: pointer;
 }
+
+/* BOTONES SUPERIORES */
+.topbar__btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f7f5f3;
+  border: 1px solid #e7e2dc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #3a3a3a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.topbar__btn:hover {
+  background: #fff;
+  border-color: #E2732C;
+  color: #E2732C;
+}
+
+/* botón activo */
+.topbar__btn.active {
+  background: #fff3ea;
+  border-color: #E2732C;
+  color: #E2732C;
+}
+
+/* botón cerrar sesión */
+.topbar__btn.danger {
+  background: #fff;
+  border: 1px solid #f0d4d4;
+  color: #c62828;
+}
+
+.topbar__btn.danger:hover {
+  background: #ffecec;
+  border-color: #c62828;
+  color: #c62828;
+}

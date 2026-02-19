@@ -1,26 +1,34 @@
 import "./TopBar.css";
-import { Clock, User } from "lucide-react";
+import { Clock, DollarSign, SquareChartGantt, LogOut, ChartNoAxesCombined } from "lucide-react";
+import {  getRole } from "../../../../auth/auth.js";
 
 function TopBar({
-  nameCoffeShop = { nameCoffeShop },
-  roleUser = {roleUser},
-  handleLogout ={handleLogout},
+  nameCoffeShop = "Cafeteria KFE",
+  goToVentas,
+  goToInventario,
+  onLogout,
+  goToGrapics,
 }) {
   const now = new Date();
+
   const dateText = now.toLocaleDateString("es-MX", {
     weekday: "long",
     day: "2-digit",
     month: "long",
     year: "numeric",
   });
+
   const timeText = now.toLocaleTimeString("es-MX", {
     hour: "2-digit",
     minute: "2-digit",
   });
 
+
+  const role = getRole();
+  const canSeeReports = role === "admin";
+
   return (
     <header className="topbar">
-      {/* lado izquierdo */}
       <div className="topbar__left">
         <div className="brand">
           <h1 className="topbar__title">{nameCoffeShop}</h1>
@@ -28,21 +36,33 @@ function TopBar({
         </div>
       </div>
 
-      {/* lado derecho */}
       <div className="topbar__right">
         <div className="topbar__time">
-          <span className="topbar__icon" aria-hidden="true">
-            <Clock zize={14} />
-          </span>
+          <Clock size={14} />
           <span>{timeText}</span>
         </div>
 
-        <div className="topbar__user hover-accent">
-          <button className="topbar__icon hover-accent" onClick={handleLogout}>
-            <User size={14} />
-            <span>{roleUser}</span>
-          </button>
-        </div>
+        <button className="topbar__btn" onClick={goToVentas}>
+          <DollarSign size={14} />
+          <span>Ventas</span>
+        </button>
+
+        <button className="topbar__btn" onClick={goToInventario}>
+          <SquareChartGantt size={14} />
+          <span>Inventario</span>
+        </button>
+
+        {canSeeReports && (
+        <button className="topbar__btn" onClick={goToGrapics}>
+          <ChartNoAxesCombined size={14} />
+          <span>Graficas</span>
+        </button>
+        )}
+
+        <button className="topbar__btn danger" onClick={onLogout}>
+          <LogOut size={14} />
+          <span>Cerrar sesión</span>
+        </button>
       </div>
     </header>
   );

@@ -7,6 +7,7 @@ function ShoppingCart({
   subtotalPriceProduct,
   handleClickRemove,
   handleClickAdd,
+  stock,
 }) {
   return (
     <>
@@ -20,9 +21,13 @@ function ShoppingCart({
             {remove}
           </button>
           <span>{productQuantity}</span>
-          <button className="action__btn" onClick={handleClickAdd}>
-            {add}
-          </button>
+        <button
+          className="action__btn"
+          onClick={handleClickAdd}
+          disabled={productQuantity >= stock}
+        >
+          {add}
+        </button>
         </div>
         <span className="order__price">${subtotalPriceProduct.toFixed(2)}</span>
       </div>

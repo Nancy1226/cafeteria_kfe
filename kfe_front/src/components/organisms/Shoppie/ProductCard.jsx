@@ -8,6 +8,7 @@ function ProductCard({
   descriptionCard,
   nameButton,
   onAdd,
+  stock,
 }) {
   return (
     <>
@@ -19,6 +20,7 @@ function ProductCard({
         descriptionCard={descriptionCard}
         nameButton={nameButton}
         onClick={onAdd}
+        stock={stock}
       />
     </>
   );
